@@ -1,34 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### Database
 
-## Getting Started
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2Frailwayapp%2Fstarters%2Ftree%2Fmaster%2Fexamples%2Ffullstack-music-app&plugins=postgresql)
 
-First, run the development server:
+### Prisma
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+1. synchronize your Prisma schema with your database schema(每当修改 schema 时，可以运行此命令，同步 schema):
+   `npx prisma db push`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. create and apply migrations in development environment(如果 package.json 里有设置 prisma seed 字段，会自动跑 seed script):
+   `npx prisma migrate dev`
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+3. seeding your database:
+   `npx prisma db seed`
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+4. GUI for database:
+   `npx prisma studio`
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+5. prisma create and upsert 区别：
+   upsert 配合 where 找到然后更新，create 凭空创建
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+6. reset the database:
+   `npx prisma migrate reset`
