@@ -17,7 +17,7 @@ const SongTable = ({ songs }) => {
   return (
     <Box bg="transparent" color="white">
       <Box padding="10px" marginBottom="20px">
-        <Box marginBottom="30px">
+        <Box marginBottom="30px" marginLeft="5px">
           <IconButton
             icon={<BsFillPlayFill fontSize="30px" />}
             aria-label="play"
