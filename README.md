@@ -2,6 +2,11 @@
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2Frailwayapp%2Fstarters%2Ftree%2Fmaster%2Fexamples%2Ffullstack-music-app&plugins=postgresql)
 
+### Try it out
+Demo: sound-music.vercel.app
+Email: user@test.com
+Password: password
+
 ### Prisma
 
 1. synchronize your Prisma schema with your database schema(每当修改 schema 时，可以运行此命令，同步 schema):
